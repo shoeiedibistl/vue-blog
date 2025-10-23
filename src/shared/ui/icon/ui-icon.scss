@@ -1,0 +1,18 @@
+.ui-icon {
+  overflow: visible;
+
+  &:not(.icon_initial) {
+    * {
+      transform-box: fill-box;
+      transform-origin: center;
+
+      &[fill] {
+        fill: currentColor;
+      }
+
+      &[stroke] {
+        stroke: currentColor;
+      }
+    }
+  }
+}

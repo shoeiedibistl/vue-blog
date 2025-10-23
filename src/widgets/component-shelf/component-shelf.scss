@@ -1,0 +1,98 @@
+.component-shelf {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  color: #111827;
+  font-family: system-ui, sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: $transition;
+  width: 100%;
+
+  &:hover {
+    background: #ffffff;
+    border-color: #7ec8e3;
+  }
+
+  &__code-example {
+    margin-top: 40px;
+    border-bottom: 2px #bebebe solid;
+    padding-bottom: 40px;
+  }
+
+  &__name {
+    margin-bottom: 8px;
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #111827;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+  }
+
+  &__import {
+    flex-shrink: 1;
+    overflow: hidden;
+  }
+
+  &__uniqueID {
+    font-size: 18px;
+    font-weight: 500;
+    color: #6b7280;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #374151;
+    margin-bottom: 20px;
+  }
+
+  &__examples {
+    background: #ffffff;
+
+    padding: 24px 8px;
+    color: #1f2937;
+    font-size: 16px;
+    overflow-x: auto;
+    width: calc(100% + 16px);
+    margin-left: calc(-8px);
+    padding-inline: 8px;
+
+    margin-top: 16px;
+
+    border-top: 2px #bebebe solid;
+    //border-bottom: 2px #bebebe dashed;
+
+    /* subtle scrollbar styling */
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  }
+}
+
+@media #{media('<',d)} {
+  .component-shelf {
+    &__name {
+      h2 {
+        font-size: 32px;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+$fs: 16px;
+$font: Roboto, sans-serif;
+
+// transitions
+$transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+$transition-duration: 0.4s;
+$transition: $transition-duration $transition-timing-function;
+
+// Breakpoints
+$breakpoints: (
+  xxl: 1920px,
+  ll: 1440px,
+  d: 1201px,
+  t: 1024px,
+  lg: 992px,
+  m: 768px,
+  s: 576px,
+  xs: 375px
+);

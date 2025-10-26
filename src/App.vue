@@ -1,6 +1,11 @@
-<script setup lang="ts"></script>
+<script setup>
+  import Header from "./components/widgets/Header.vue";
+</script>
 
 <template>
-  <router-view />
-</template>
+  <Header />
 
+  <main>
+    <RouterView />
+  </main>
+</template>

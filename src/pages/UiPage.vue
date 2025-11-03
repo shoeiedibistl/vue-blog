@@ -1,16 +1,77 @@
 <script setup>
   import Input from "../components/ui/Input.vue";
+  import Textarea from "@/components/ui/Textarea.vue";
+  import Logo from "@/components/ui/Logo.vue";
+  import SearchButton from "@/components/widgets/SearchButton.vue";
+  import Content from "@/components/widgets/Content.vue";
+  import SelectSort from "@/components/ui/SelectSort.vue";
+  import PostCard from "@/components/widgets/PostCard.vue";
+  import ShashlImage from "@/assets/images/shashl.jpg";
 </script>
 
 <template>
-  <div class="ui">
-    <h1>UI</h1>
+  <Content>
+    <div class="ui">
+      <h1>UI</h1>
 
-    <br />
-    <br />
+      <div class="ui__item">
+        <h2>Logo</h2>
+        <div style="width: 100px">
+          <Logo />
+        </div>
+      </div>
 
-    <h2>Input</h2>
-    <Input />
-    <br />
-  </div>
+      <div class="ui__item">
+        <h2>Input</h2>
+        <Input />
+      </div>
+
+      <div class="ui__item">
+        <h2>Textarea</h2>
+        <Textarea />
+      </div>
+
+      <div class="ui__item">
+        <h2>SearchButton</h2>
+        <SearchButton />
+      </div>
+
+      <div class="ui__item">
+        <h2>SelectSort</h2>
+        <SelectSort />
+      </div>
+
+      <div class="ui__item">
+        <h2>PostCard</h2>
+        <div
+          style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px"
+        >
+          <PostCard />
+          <PostCard
+            title="Сенсация! Глеб съел шошлыг и запил его медовухой!"
+            description="Неожиданное событие произошло сегодня в самом сердце Воронежской области. В самую непогоду Глеб Ш. съел шошлыг и неожиданно запил его медовухой"
+            :image="ShashlImage"
+            views="146"
+            comments="94"
+            viewed
+          />
+        </div>
+      </div>
+    </div>
+  </Content>
 </template>
+
+<style scoped lang="scss">
+  .ui {
+    padding-block: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+</style>

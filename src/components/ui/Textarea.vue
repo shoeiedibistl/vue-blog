@@ -1,24 +1,26 @@
 <script setup>
-defineProps({
-  inheritAttrs: false,
-  placeholder: {
-    default: 'myPlaceholder'
-  }
-})
+  defineProps({
+    inheritAttrs: false,
+    placeholder: {
+        default: 'myPlaceholder'
+    }
+  });
 </script>
 
 <template>
-  <label class="input-label">
-    <input type="text" class="input" v-bind="$attrs" :placeholder="placeholder">
+  <label class="textarea-label">
+    <textarea class="textarea" v-bind="$attrs" :placeholder="placeholder"></textarea>
   </label>
 </template>
 
-<style lang: scss>
-  input {
-    height: 40px;
-    width: 420px;
 
-    padding: 0 12px;
+<style lang: scss>
+  textarea {
+    height: 140px;
+    width: 420px;
+    resize: none;
+
+    padding: 11px 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
 
@@ -40,7 +42,7 @@ defineProps({
     }
 
     &::placeholder {
-      color: #cccccc;
+        color: #cccccc;
     }
   }
 </style>

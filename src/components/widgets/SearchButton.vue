@@ -13,8 +13,6 @@
 
     const leftDistance = wrapper.getBoundingClientRect().left;
 
-    console.log("leftDistance", leftDistance);
-
     const inputWidth = 420;
 
     if (leftDistance < inputWidth) {

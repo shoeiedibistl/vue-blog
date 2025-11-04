@@ -1,6 +1,6 @@
 <script setup>
   import Input from "../ui/Input.vue";
-  import SearchSvg from "../ui/SearchSvg.vue";
+  import SearchSvg from "../ui/svg/SearchSvg.vue";
 
   import { ref } from "vue";
 

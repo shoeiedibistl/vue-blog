@@ -1,7 +1,7 @@
 <script setup>
   import Input from "../components/ui/Input.vue";
   import Textarea from "@/components/ui/Textarea.vue";
-  import LogoSvg from "@/components/ui/LogoSvg.vue";
+  import LogoSvg from "@/components/ui/svg/LogoSvg.vue";
   import SearchButton from "@/components/widgets/SearchButton.vue";
   import Content from "@/components/widgets/Content.vue";
   import SelectSort from "@/components/ui/SelectSort.vue";

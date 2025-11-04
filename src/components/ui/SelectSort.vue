@@ -1,5 +1,5 @@
 <script setup>
-  import SortSvg from "./SortSvg.vue";
+  import SortSvg from "./svg/SortSvg.vue";
 
   import { ref } from "vue";
 

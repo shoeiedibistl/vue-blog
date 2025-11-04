@@ -1,5 +1,5 @@
 <script setup>
-  import LogoSvg from "../ui/LogoSvg.vue";
+  import LogoSvg from "../ui/svg/LogoSvg.vue";
   import Content from "./Content.vue";
   import SearchButton from "./SearchButton.vue";
 </script>

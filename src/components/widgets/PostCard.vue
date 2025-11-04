@@ -1,6 +1,6 @@
 <script setup>
-  import EyeSvg from "../ui/EyeSvg.vue";
-  import CommentsSvg from "../ui/CommentsSvg.vue";
+  import EyeSvg from "../ui/svg/EyeSvg.vue";
+  import CommentsSvg from "../ui/svg/CommentsSvg.vue";
 
   defineProps({
     title: { type: String, default: "Card title" },

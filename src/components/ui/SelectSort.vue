@@ -17,12 +17,12 @@
           value: "old",
         },
         {
-          text: "Сначала дорогие",
-          value: "expensive",
+          text: "По популярности",
+          value: "popular",
         },
         {
-          text: "Сначала дешевые",
-          value: "cheap",
+          text: "По комментариям",
+          value: "comments",
         },
       ],
     },
@@ -91,7 +91,11 @@
     <Transition name="select">
       <ul class="select__list" v-show="isOpen">
         <li v-for="(item, index) in selectData" :key="index">
-          <button class="select__variant" data-value="new" @click="select">
+          <button
+            class="select__variant"
+            :data-value="item.value"
+            @click="select"
+          >
             {{ item.text }}
           </button>
         </li>

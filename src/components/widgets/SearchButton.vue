@@ -161,6 +161,10 @@
     width: 420px;
     pointer-events: all;
 
+    .input-label {
+      width: 100%;
+    }
+
     input {
       width: 100%;
     }

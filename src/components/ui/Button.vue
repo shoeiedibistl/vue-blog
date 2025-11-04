@@ -55,8 +55,8 @@
 
     @media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
       &:hover {
-        border-color: #42b883;
-        background-color: #42b883;
+        border-color: #33a06f;
+        background-color: #33a06f;
         color: #ffffff;
       }
     }

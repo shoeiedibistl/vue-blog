@@ -166,7 +166,7 @@
       }
 
       &.viewed {
-        color: #33a06f;
+        color: #42b883;
       }
 
       svg {

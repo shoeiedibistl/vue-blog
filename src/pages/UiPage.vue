@@ -11,11 +11,13 @@
   import Button from "@/components/ui/Button.vue";
 
   function textButtonClick(button, e) {
-    console.log("textButtonClick", button, e);
+    console.log("textButtonClick button", button);
+    console.log("textButtonClick event", e);
   }
 
   function simpleButtonClick(button, e) {
-    console.log("simpleButtonClick", button, e);
+    console.log("simpleButtonClick button", button);
+    console.log("simpleButtonClick event", e);
   }
 </script>
 

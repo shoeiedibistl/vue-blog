@@ -144,7 +144,7 @@
 
     &__meta {
       display: flex;
-      gap: 24px;
+      gap: 12px;
       align-items: flex-end;
     }
 

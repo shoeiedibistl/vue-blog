@@ -1,5 +1,5 @@
 <script setup>
-  import Logo from "../ui/Logo.vue";
+  import LogoSvg from "../ui/LogoSvg.vue";
   import Content from "./Content.vue";
   import SearchButton from "./SearchButton.vue";
 </script>
@@ -10,7 +10,7 @@
       <div class="header__inner">
         <RouterLink to="/">
           <div class="header__logo">
-            <Logo />
+            <LogoSvg />
           </div>
         </RouterLink>
         <div class="header__links">

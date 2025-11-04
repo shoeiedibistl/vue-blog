@@ -1,7 +1,7 @@
 <script setup>
   import Input from "../components/ui/Input.vue";
   import Textarea from "@/components/ui/Textarea.vue";
-  import Logo from "@/components/ui/Logo.vue";
+  import LogoSvg from "@/components/ui/LogoSvg.vue";
   import SearchButton from "@/components/widgets/SearchButton.vue";
   import Content from "@/components/widgets/Content.vue";
   import SelectSort from "@/components/ui/SelectSort.vue";
@@ -15,9 +15,9 @@
       <h1>UI</h1>
 
       <div class="ui__item">
-        <h2>Logo</h2>
+        <h2>LogoSvg</h2>
         <div style="width: 100px">
-          <Logo />
+          <LogoSvg />
         </div>
       </div>
 

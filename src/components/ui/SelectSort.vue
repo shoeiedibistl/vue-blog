@@ -1,4 +1,6 @@
 <script setup>
+  import SortSvg from "./SortSvg.vue";
+
   import { ref } from "vue";
 
   defineProps({
@@ -75,24 +77,7 @@
   <div class="select">
     <button class="select__selection" @click="toggle" aria-label="">
       <span class="select__selection-icon">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="800px"
-          height="800px"
-          viewBox="0 0 24 24"
-          fill="none"
-        >
-          <g id="Edit / Sort_Ascending">
-            <path
-              id="Vector"
-              d="M4 17H10M4 12H13M18 11V19M18 19L21 16M18 19L15 16M4 7H16"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </g>
-        </svg>
+        <SortSvg />
       </span>
       <span class="select__selection-text">{{ buttonText }}</span>
     </button>

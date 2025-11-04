@@ -64,7 +64,6 @@
 
     @media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
       &:hover {
-        border-color: transparent;
         box-shadow: 0 0 12px 0 #ccc;
 
         .post-card__image {

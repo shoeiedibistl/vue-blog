@@ -5,9 +5,11 @@
   import { ref } from "vue";
 
   const isOpen = ref(false);
+  const openToRight = ref(false);
+  const searchText = ref("");
+  const searchInput = ref("");
   let focusTimeout = null;
   let activeInput = null;
-  const openToRight = ref(false);
 
   function click(e) {
     const wrapper = e.target.closest(".search-wrapper");
@@ -26,23 +28,55 @@
       document.addEventListener("click", close);
       document.addEventListener("keydown", close);
 
-      const input = e.target.closest(".search-wrapper").querySelector("input");
-      activeInput = input;
+      // const input = e.target.closest(".search-wrapper").querySelector("input");
+      // activeInput = input;
 
-      focusTimeout = setTimeout(() => {
-        input.focus();
-      }, 400);
+      // focusTimeout = setTimeout(() => {
+      //   // input.focus();
+      //   searchInput.value?.focus();
+      // }, 400);
     }
   }
 
+  const focusInput = () => {
+    clearTimeout(focusTimeout);
+
+    focusTimeout = setTimeout(() => {
+      searchInput.value?.focus();
+    }, 200);
+  };
+
+  const blurInput = () => {
+    clearTimeout(focusTimeout);
+
+    searchInput.value?.blur();
+  };
+
   function close(e) {
     if (!e.target.closest(".search-wrapper") || e.key === "Escape") {
-      clearTimeout(focusTimeout);
-      activeInput?.blur();
+      blurInput();
       isOpen.value = false;
       document.removeEventListener("click", close);
       document.removeEventListener("keydown", close);
     }
+  }
+
+  function onBeforeLeave() {
+    console.log("SearchButton onBeforeLeave");
+  }
+
+  function onAfterEnter() {
+    console.log("SearchButton onAfterEnter");
+
+    focusInput();
+  }
+
+  function handleChange(value) {
+    console.log("SearchButton handleChange", value);
+  }
+
+  function handleInput(value) {
+    console.log("SearchButton handleInput", value);
   }
 </script>
 
@@ -56,10 +90,22 @@
     >
       <SearchSvg />
     </button>
-    <Transition name="search">
+    <Transition
+      name="search"
+      @before-leave="onBeforeLeave"
+      @after-enter="onAfterEnter"
+    >
       <!-- <form class="search-form" :class="{ active: isOpen }"> -->
       <form class="search-form" v-show="isOpen">
-        <Input data-attr placeholder="Поиск..." required />
+        <Input
+          data-attr
+          placeholder="Поиск..."
+          required
+          v-model="searchText"
+          @input="handleInput"
+          @change="handleChange"
+          ref="searchInput"
+        />
       </form>
     </Transition>
   </div>

@@ -1,15 +1,51 @@
 <script setup>
+
+import {ref, defineEmits, defineProps} from 'vue'
+
   defineProps({
     inheritAttrs: false,
     placeholder: {
         default: 'myPlaceholder'
+    },
+    modelValue: {
+      type: String,
+      default: ''
     }
   });
+
+  const textareaRef = ref(null)
+
+  const emit = defineEmits(['update:modelValue', 'input', 'change'])
+
+  const getValue=()=> {
+    return textareaRef.value?.value
+  }
+
+  function handleInput(e) {
+    const value = e.target.value
+
+    console.log('Textarea handleInput', value)
+
+    emit('update:modelValue', value)
+    emit('input', value)
+  }
+
+  function handleChange (e) {
+    const value = e.target.value
+
+    console.log('Textarea handleChange', value)
+
+    emit('change', value)
+  }
+
+  defineExpose({
+    getValue
+  })
 </script>
 
 <template>
   <label class="textarea-label">
-    <textarea class="textarea" v-bind="$attrs" :placeholder="placeholder"></textarea>
+    <textarea class="textarea" v-bind="$attrs" :placeholder="placeholder" ref="textareaRef" @input="handleInput" @change="handleChange"></textarea>
   </label>
 </template>
 

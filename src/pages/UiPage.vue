@@ -7,6 +7,7 @@
   import SelectSort from "@/components/ui/SelectSort.vue";
   import PostCard from "@/components/widgets/PostCard.vue";
   import ShashlImage from "@/assets/images/shashl.jpg";
+  import Skeleton from "@/components/widgets/Skeleton.vue";
 </script>
 
 <template>
@@ -39,6 +40,17 @@
       <div class="ui__item">
         <h2>SelectSort</h2>
         <SelectSort />
+      </div>
+
+      <div class="ui__item">
+        <h2>Skeleton</h2>
+        <div
+          style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px"
+        >
+          <Skeleton />
+          <Skeleton />
+          <Skeleton />
+        </div>
       </div>
 
       <div class="ui__item">

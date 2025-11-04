@@ -1,7 +1,7 @@
 <script setup>
   import SortSvg from "./svg/SortSvg.vue";
 
-  import { ref } from "vue";
+  import { ref, defineExpose } from "vue";
 
   defineProps({
     selectData: {
@@ -51,13 +51,11 @@
   };
 
   const select = (e) => {
-    console.log(e.target.dataset.value);
-
     e.target.dataset.value &&
       ((buttonText.value = e.target.closest("button").textContent),
       (SortBy.value = e.target.dataset.value));
 
-    console.log("SortBy", SortBy.value);
+    console.log("SelectSort SortBy", SortBy.value);
     close();
   };
 
@@ -70,6 +68,14 @@
       }
     }
   }
+
+  const getSortBy = () => {
+    return SortBy.value;
+  };
+
+  defineExpose({
+    getSortBy,
+  });
 </script>
 
 <template>

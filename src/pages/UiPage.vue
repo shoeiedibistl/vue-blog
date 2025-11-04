@@ -10,12 +10,12 @@
   import Skeleton from "@/components/widgets/Skeleton.vue";
   import Button from "@/components/ui/Button.vue";
 
-  function textButtonClick(e) {
-    console.log("textButtonClick", e);
+  function textButtonClick(button, e) {
+    console.log("textButtonClick", button, e);
   }
 
-  function simpleButtonClick(e) {
-    console.log("simpleButtonClick", e);
+  function simpleButtonClick(button, e) {
+    console.log("simpleButtonClick", button, e);
   }
 </script>
 

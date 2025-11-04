@@ -15,7 +15,7 @@
   const emits = defineEmits(["buttonClick"]);
 
   function buttonClick(event) {
-    emits("buttonClick", buttonRef.value);
+    emits("buttonClick", buttonRef.value, event);
   }
 </script>
 

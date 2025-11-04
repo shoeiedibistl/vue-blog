@@ -1,0 +1,22 @@
+<template>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <line
+      x1="12"
+      y1="9"
+      x2="20"
+      y2="16"
+      stroke="currentColor"
+      stroke-width="2.5"
+      stroke-linecap="round"
+    />
+    <line
+      x1="12"
+      y1="23"
+      x2="20"
+      y2="16"
+      stroke="currentColor"
+      stroke-width="2.5"
+      stroke-linecap="round"
+    />
+  </svg>
+</template>

@@ -8,6 +8,15 @@
   import PostCard from "@/components/widgets/PostCard.vue";
   import ShashlImage from "@/assets/images/shashl.jpg";
   import Skeleton from "@/components/widgets/Skeleton.vue";
+  import Button from "@/components/ui/Button.vue";
+
+  function textButtonClick(e) {
+    console.log("textButtonClick", e);
+  }
+
+  function simpleButtonClick(e) {
+    console.log("simpleButtonClick", e);
+  }
 </script>
 
 <template>
@@ -30,6 +39,16 @@
       <div class="ui__item">
         <h2>Textarea</h2>
         <Textarea />
+      </div>
+
+      <div class="ui__item">
+        <h2>Button</h2>
+        <Button @button-click="simpleButtonClick" />
+        <Button
+          text="Button text='Button'"
+          @button-click="textButtonClick"
+          data-test-attribute
+        />
       </div>
 
       <div class="ui__item">

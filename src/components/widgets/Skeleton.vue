@@ -34,7 +34,7 @@
 
       background: linear-gradient(90deg, #f5f5f5 0%, #e8e8e8 50%, #f5f5f5 100%);
       background-size: 300% 100%;
-      animation: skeleton-shimmer 5s infinite ease-in-out;
+      animation: skeleton-shimmer 3s infinite ease-in-out;
 
       @keyframes skeleton-shimmer {
         0% {

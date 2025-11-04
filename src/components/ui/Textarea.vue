@@ -19,24 +19,22 @@
   const emit = defineEmits(["update:modelValue", "input", "change"]);
 
   const getValue = () => {
-    return textareaRef.value?.value;
+    return textareaRef.value?.value.trim();
   };
 
   function handleInput(e) {
-    const value = e.target.value;
-
-    symbolsCounter.value = value.length;
+    symbolsCounter.value = e.target.value.length;
+    const value = e.target.value.trim();
 
     emit("update:modelValue", value);
     emit("input", value);
   }
 
   function handleChange(e) {
-    const value = e.target.value;
+    symbolsCounter.value = e.target.value.length;
+    const value = e.target.value.trim();
 
     console.log("Textarea handleChange", value);
-
-    symbolsCounter.value = value.length;
 
     emit("change", value);
   }

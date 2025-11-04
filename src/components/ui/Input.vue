@@ -38,7 +38,7 @@
 
   const getValue = () => {
     console.log("Input getValue");
-    return inputRef.value?.value;
+    return inputRef.value?.value.trim();
   };
 
   defineExpose({
@@ -49,18 +49,18 @@
   });
 
   function handleInput(e) {
-    const value = e.target.value;
+    inputValue.value = e.target.value.length;
+    const value = e.target.value.trim();
 
     emit("update:modelValue", value);
     emit("input", value);
-    inputValue.value = value.length;
   }
 
   function handleChange(e) {
-    const value = e.target.value;
+    inputValue.value = e.target.value.length;
+    const value = e.target.value.trim();
 
     emit("change", value);
-    inputValue.value = value.length;
   }
 </script>
 

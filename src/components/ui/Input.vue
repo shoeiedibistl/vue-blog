@@ -16,6 +16,7 @@
   const emit = defineEmits(["update:modelValue", "input", "change"]);
 
   const inputRef = ref(null);
+  const inputValue = ref(0);
 
   const focus = () => {
     inputRef.value?.focus();
@@ -28,7 +29,10 @@
   };
 
   const clear = () => {
-    inputRef.value?.clear();
+    if (inputRef.value) {
+      inputRef.value.value = "";
+      handleInput({ target: inputRef.value });
+    }
     console.log("Input clear");
   };
 
@@ -49,12 +53,14 @@
 
     emit("update:modelValue", value);
     emit("input", value);
+    inputValue.value = value.length;
   }
 
   function handleChange(e) {
     const value = e.target.value;
 
     emit("change", value);
+    inputValue.value = value.length;
   }
 </script>
 
@@ -70,9 +76,11 @@
       @input="handleInput"
       @change="handleChange"
     />
-    <span class="input__clear">
-      <CrossSvg />
-    </span>
+    <Transition name="cross">
+      <span class="input__clear" v-show="inputValue > 0" @click="clear">
+        <CrossSvg />
+      </span>
+    </Transition>
   </label>
 </template>
 

@@ -55,7 +55,7 @@
       ((buttonText.value = e.target.closest("button").textContent),
       (SortBy.value = e.target.dataset.value));
 
-    console.log("SelectSort SortBy", SortBy.value);
+    console.log("SelectSort SortBy =", SortBy.value);
     close();
   };
 

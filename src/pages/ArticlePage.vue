@@ -111,6 +111,13 @@
 
     &__image {
       margin-top: 24px;
+      border-radius: 24px;
+      overflow: hidden;
+      -webkit-mask-image: -webkit-radial-gradient(
+        circle,
+        white 100%,
+        black 100%
+      );
     }
 
     &__text {

@@ -103,6 +103,11 @@
       gap: 48px;
     }
 
+    &__date {
+      font-size: 13px;
+      color: #c0c0c0;
+    }
+
     &__meta {
       display: flex;
       align-items: center;

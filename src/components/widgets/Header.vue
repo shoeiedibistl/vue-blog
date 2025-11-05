@@ -17,6 +17,7 @@
           <SearchButton />
           <RouterLink to="/">Home</RouterLink>
           <RouterLink to="/ui">Ui</RouterLink>
+          <RouterLink to="/article">Article</RouterLink>
         </div>
       </div>
     </Content>

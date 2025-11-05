@@ -9,6 +9,7 @@
   import ShashlImage from "@/assets/images/shashl.jpg";
   import Skeleton from "@/components/widgets/Skeleton.vue";
   import Button from "@/components/ui/Button.vue";
+  import Comment from "@/components/widgets/Comment.vue";
 
   function textButtonClick(button, e) {
     console.log("textButtonClick button", button);
@@ -80,15 +81,22 @@
           style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px"
         >
           <PostCard />
-          <PostCard
-            title="Сенсация! Глеб съел шошлыг и запил его медовухой!"
-            description="Важнейшее событие произошло сегодня в самом сердце России в городе-миллиарднике NY. В самую непогоду Глеб съел шошлыг, запив его медовухой"
-            :image="ShashlImage"
-            :views="146"
-            :comments="94"
-            viewed
-          />
+          <RouterLink to="/article">
+            <PostCard
+              title="Сенсация! Глеб съел шошлыг и запил его медовухой!"
+              description="Важнейшее событие произошло сегодня в самом сердце России в городе-миллиарднике NY. В самую непогоду Глеб съел шошлыг, запив его медовухой"
+              :image="ShashlImage"
+              :views="146"
+              :comments="94"
+              viewed
+            />
+          </RouterLink>
         </div>
+      </div>
+
+      <div class="ui__item">
+        <h2>Comment</h2>
+        <Comment />
       </div>
     </div>
   </Content>

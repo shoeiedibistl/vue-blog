@@ -1,8 +1,9 @@
 <script setup>
-  import EyeSvg from "../ui/svg/EyeSvg.vue";
-  import CommentsSvg from "../ui/svg/CommentsSvg.vue";
+  import CounterViews from "./CounterViews.vue";
+  import CounterComments from "./CounterComments.vue";
+  import { provide } from "vue";
 
-  defineProps({
+  const props = defineProps({
     title: { type: String, default: "Card title" },
     description: { type: String, default: "Card description" },
     image: String,
@@ -10,6 +11,12 @@
     views: { type: Number, default: 0 },
     viewed: { type: Boolean, default: false },
     comments: { type: Number, default: 0 },
+  });
+
+  provide("postMeta", {
+    views: props.views,
+    viewed: props.viewed,
+    comments: props.comments,
   });
 </script>
 
@@ -25,23 +32,11 @@
     <div class="post-card__footer">
       <div class="post-card__date">{{ date }}</div>
       <div class="post-card__meta">
-        <div
-          class="post-card__views"
-          :class="([views > 0 ? 'not-empty' : ''], { viewed: viewed })"
-        >
-          <EyeSvg />
-          <span>
-            {{ views }}
-          </span>
+        <div class="post-card__views">
+          <CounterViews />
         </div>
-        <div
-          class="post-card__comments"
-          :class="[comments > 0 ? 'not-empty' : '']"
-        >
-          <CommentsSvg />
-          <span>
-            {{ comments }}
-          </span>
+        <div class="post-card__comments">
+          <CounterComments />
         </div>
       </div>
     </div>
@@ -125,6 +120,7 @@
     &__description {
       font-size: 16px;
       font-weight: 400;
+      color: #3c3c3c;
 
       display: -webkit-box;
       -webkit-line-clamp: 4;
@@ -150,50 +146,6 @@
     &__date {
       font-size: 13px;
       color: #c0c0c0;
-    }
-
-    &__views {
-      font-size: 13px;
-      line-height: 18px;
-      color: #c0c0c0;
-
-      display: flex;
-      gap: 4px;
-      align-items: center;
-
-      &.not-empty {
-        color: initial;
-      }
-
-      &.viewed {
-        color: #42b883;
-      }
-
-      svg {
-        width: 18px;
-        height: 18px;
-        flex-shrink: 0;
-      }
-    }
-
-    &__comments {
-      font-size: 13px;
-      line-height: 18px;
-      color: #c0c0c0;
-
-      display: flex;
-      gap: 4px;
-      align-items: center;
-
-      &.not-empty {
-        color: initial;
-      }
-
-      svg {
-        width: 18px;
-        height: 18px;
-        flex-shrink: 0;
-      }
     }
   }
 </style>

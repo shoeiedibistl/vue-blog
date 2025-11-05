@@ -96,7 +96,7 @@
     }
 
     &__info {
-      margin-top: 48px;
+      margin-top: 96px;
 
       display: flex;
       justify-content: space-between;
@@ -126,7 +126,7 @@
 
     &__comments {
       width: fit-content;
-      margin: 48px auto 0;
+      margin: 96px auto 0;
     }
 
     &__comments-list {

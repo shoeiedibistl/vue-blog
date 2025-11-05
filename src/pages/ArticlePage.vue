@@ -89,7 +89,7 @@
 
 <style lang="scss">
   .article {
-    padding-block: 48px;
+    padding-block: 96px;
 
     &__title {
       font-size: 48px;

@@ -25,7 +25,7 @@
 <template>
   <Content>
     <div class="ui">
-      <h1>UI</h1>
+      <h1 class="ui__title">UI</h1>
 
       <div class="ui__item">
         <h2>LogoSvg</h2>
@@ -104,10 +104,14 @@
 
 <style scoped lang="scss">
   .ui {
-    padding-block: 40px;
+    padding-block: 96px;
     display: flex;
     flex-direction: column;
     gap: 40px;
+
+    &__title {
+      font-size: 48px;
+    }
 
     &__item {
       display: flex;
